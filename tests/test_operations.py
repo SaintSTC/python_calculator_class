@@ -1,6 +1,6 @@
 """Tests for calculator operations."""
 
-from src.calculator.operations import add, subtract
+from src.calculator.operations import add, subtract, multiply, divide
 
 def test_add():
     """Test the add function."""
@@ -13,3 +13,20 @@ def test_subtract():
     assert subtract(2, 1) == 1
     assert subtract(1, 1) == 0
     assert subtract(0, 1) == -1
+
+def test_multiply():
+    """Test the multiply function."""
+    assert multiply(2, 3) == 6
+    assert multiply(-1, 1) == -1
+    assert multiply(0, 100) == 0
+
+def test_divide():
+    """Test the divide function."""
+    assert divide(6, 3) == 2
+    assert divide(-6, 3) == -2
+    try:
+        divide(1, 0)
+    except ValueError as e:
+        assert str(e) == "Cannot divide by zero."
+    else:
+        assert False, "Expected ValueError for division by zero"
