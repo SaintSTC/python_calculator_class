@@ -1,6 +1,6 @@
 """Tests for calculator operations."""
 
-from calculator.operations import add, subtract
+from src.calculator.operations import add
 
 def test_add():
     """Test the add function."""
